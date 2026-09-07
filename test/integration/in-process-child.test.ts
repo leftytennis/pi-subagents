@@ -277,7 +277,7 @@ describe("default child session factory", () => {
 
 	it("runs the child prompt rewrite before ambient prompt capture without reordering ambient extensions", async () => {
 		const agentPrompt = '<active_agent name="remotion-editor"/>\n\neditor instructions';
-		const globalPath = path.join(process.env.HOME ?? process.cwd(), ".pi", "agent", "AGENTS.md");
+		const globalPath = path.join(process.env.HOME ?? process.env.USERPROFILE ?? process.cwd(), ".pi", "agent", "AGENTS.md");
 		const projectPath = path.join(process.cwd(), "AGENTS.md");
 		const orchestrationSkill = '<skill><name>pi-subagents</name><location>/skills/pi-subagents/SKILL.md</location></skill>';
 		const assemble = (extra: string) => `${agentPrompt}${extra}`;
